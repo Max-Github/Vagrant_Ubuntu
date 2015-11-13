@@ -6,7 +6,7 @@ Vagrant.configure('2') do |config|
   config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/wily/current/wily-server-cloudimg-amd64-vagrant-disk1.box"
   #config.vm.hostname = 'UbuntuWily64'
   config.vm.provision :shell, inline: "hostnamectl set-hostname UbuntuWily64" #Workaround to set hostname
-
+  config.ssh.shell = 'bash' #Fix bug with ubuntu.
   #config.vbguest.auto_update = true
 
   #config.vm.network :forwarded_port, guest: 3000, host: 3000
